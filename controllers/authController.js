@@ -26,7 +26,7 @@ const handleNewUser = async (req, res) => {
         console.log(result);
 
         res.status(201).json({ 'success': `New user ${fullName} created!` });
-        sendMail(email, "Welcome to APEN", `You have successfully created an account on APEN portal. Here are your login details: Email: ${email} Password: ${password}`)
+        // sendMail(email, "Welcome to APEN", `You have successfully created an account on APEN portal. Here are your login details: Email: ${email} Password: ${password}`)
 
     } catch (err) {
         res.status(500).json({ 'message': err.message });
