@@ -4,8 +4,8 @@ const RegisterationSchema = new mongoose.Schema(
 	{
 		user: {type: mongoose.Schema.Types.ObjectId, required: true},
 		fullName: { type: String, required: true },
-		email: { type: String, required: true, unique: true},
-		phone: { type: Number, },
+		email: { type: String, required: true },
+		phone: { type: String, },
 		address: { type: String, required: true },
 		category: { type: String, default: 'N/A'},
 		size: { type: String, default: 'N/A'},
@@ -13,8 +13,8 @@ const RegisterationSchema = new mongoose.Schema(
 		delegates: [
 			{
 				fullName: { type: String, required: true },
-				email: { type: String, required: true, unique: true},
-				phone: { type: Number, },
+				email: { type: String, required: true},
+				phone: { type: String, },
 				address: { type: String, required: true },
 				category: { type: String, required: true },
 				size: { type: String, default: 'N/A'},
