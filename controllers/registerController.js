@@ -24,15 +24,20 @@ const handleRegister = async (req, res) => {
     const { fullName, email, phone, address } = req.body;
     const category = req.body.category ? req.body.category : 'N/A';
     const size = req.body.size ? req.body.size : 'N/A';
-    const accomodation = req.body.accomodation ? req.body.accomodation : 'N/A';
+    const accommodation = req.body.accommodation ? req.body.accommodation : 'N/A';
     let delegates = req.body.delegates ? req.body.delegates : [];
     if (!fullName || !email || !phone || !address) return res.status(400).json({ 'message': 'These fields are required.' });
     
-    delegates = delegates.map(delegate => {
+    delegates.map(delegate => {
+        delegate.fullName = delegate.fullName
+        delegate.email = delegate.email
+        delegate.phone = delegate.phone
+        delegate.address = delegate.address
         delegate.category = delegate.category ? delegate.category : 'N/A';
         delegate.size = delegate.size ? delegate.size : 'N/A';
-        delegate.accomodation = delegate.accomodation ? delegate.accomodation : 'N/A';
+        delegate.accommodation = delegate.accommodation ? delegate.accommodation : 'N/A';
     })
+    
     try {
         
         user =  await User.findOne({ email: user });
@@ -46,7 +51,7 @@ const handleRegister = async (req, res) => {
             "address": address,
             "category": category,
             "size": size,
-            "accomodation": accomodation,
+            "accommodation": accommodation,
             "delegates": delegates
         });
         console.log(result);
