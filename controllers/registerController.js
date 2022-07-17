@@ -57,8 +57,8 @@ const handleRegister = async (req, res) => {
         console.log(result);
         await User.findOneAndUpdate({ email: user.email }, { isRegistered: true });
 
+        sendMail(email, "APEN Conference Registeration", `Thank you for registering for this year's APEN conference. We look forward to meet you.`)
         res.status(201).json({ 'success': `Registeration created!` });
-        // sendMail(email, "APEN Conference Registeration", `Thank you for registering for this year's APEN conference. We look forward to meet you.`)
     } catch (err) {
         res.status(500).json({ 'message': err.message });
     }
