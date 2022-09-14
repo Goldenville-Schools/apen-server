@@ -10,6 +10,9 @@ const RegisterationSchema = new mongoose.Schema(
 		category: { type: String, default: 'N/A'},
 		size: { type: String, default: 'N/A'},
 		accommodation: { type: String, default: 'N/A'},
+		location: { type: String, default: 'N/A' },
+		lodging: { type: String, default: 'N/A' },
+		amount: { type: String, required: true },
 		delegates: { type : Array , "default" : [] }
 	},
 	{ collection: 'registeration' }
