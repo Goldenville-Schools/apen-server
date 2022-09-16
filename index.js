@@ -27,6 +27,7 @@ app.use(express.json());
 app.use('/register', require('./routes/register'));
 app.use('/auth', require('./routes/auth'));
 app.use('/user', require('./routes/user'));
+app.use('/admin', require('./routes/admin'));
 
 app.use(errorHandler);
 
