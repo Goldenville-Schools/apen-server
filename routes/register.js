@@ -7,4 +7,6 @@ const registerController = require('../controllers/registerController');
 router.get('/', verifyJWT, registerController.handleRegisteration);
 router.post('/', verifyJWT, registerController.handleRegister);
 
+router.post('/test', verifyJWT, registerController.handleTestRegister);
+
 module.exports = router;

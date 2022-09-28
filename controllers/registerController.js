@@ -71,5 +71,14 @@ const handleRegister = async (req, res) => {
     }
 }
 
+const handleTestRegister = async (req, res) => {
+    const { email } = req.body
+    try {
+        sendMail(email, "APEN Conference Registeration", `Thank you for registering for this year's APEN conference. We look forward to meet you.`)
+        res.status(201).json({ 'success': `Registeration created!` });
+    } catch (err) {
+        res.status(500).json({ 'message': err.message });
+    }
+}
 
-module.exports = { handleRegisteration, handleRegister };
+module.exports = { handleRegisteration, handleRegister, handleTestRegister };
