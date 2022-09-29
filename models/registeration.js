@@ -15,7 +15,8 @@ const RegisterationSchema = new mongoose.Schema(
 		amount: { type: String, required: true },
 		delegates: { type : Array , "default" : [] }
 	},
-	{ collection: 'registeration' }
+	{ collection: 'registeration' },
+	{timestamps:true}
 )
 
 const Registeration = mongoose.model('RegisterationSchema', RegisterationSchema)

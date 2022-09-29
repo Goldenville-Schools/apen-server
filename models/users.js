@@ -8,7 +8,8 @@ const UserSchema = new mongoose.Schema(
 		isRegistered: {type: Boolean, default: false},
 		refreshToken: {type: String}
 	},
-	{ collection: 'users' }
+	{ collection: 'users' },
+	{timestamps:true}
 )
 
 const Users = mongoose.model('UserSchema', UserSchema)
